@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "c691d245-fbab-460b-bd32-8a803ec8464f",
+		"name": "TPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25070286"
+	},
+	"item": [
+		{
+			"name": "tarifas",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/tarifa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"tarifa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/tarifa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"tarifa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"diaSemana\": 1,\r\n    \"diaMes\": 24,\r\n    \"mes\": null,\r\n    \"anio\": null,\r\n    \"montoFijoAlquiler\": 300.0,\r\n    \"montoMinutoFraccion\": 6.0,\r\n    \"montoKm\": 80.0,\r\n    \"montoHora\": 240.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/tarifa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"tarifa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoTarifa\": 3,\r\n    \"definicion\": \"S\",\r\n    \"diaSemana\": 1,\r\n    \"diaMes\": 24,\r\n    \"mes\": null,\r\n    \"anio\": null,\r\n    \"montoFijoAlquiler\": 300.0,\r\n    \"montoMinutoFraccion\": 6.0,\r\n    \"montoKm\": 80.0,\r\n    \"montoHora\": 240.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/tarifa/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"tarifa",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/tarifa/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"tarifa",
+								"18"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estacion",
+			"item": [
+				{
+					"name": "estacionMascercana",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/estacion/mas-cercana/-31.442961123175/-64.1940911211195",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"estacion",
+								"mas-cercana",
+								"-31.442961123175",
+								"-64.1940911211195"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ServiciosExternos",
+			"item": [
+				{
+					"name": "Alquiler",
+					"item": [
+						{
+							"name": "nuevoAlquiler",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVcExod3d4cWk2QnRYSWpaMjNZeEtjUmp6U1MwTC1pNGRjWVh6cWl6MVhrIn0.eyJleHAiOjE2OTk4OTE3MzMsImlhdCI6MTY5OTg5MTQzMywianRpIjoiY2MyMjY4NWMtNGRlOC00YjhhLWIyNTUtMTQyMTVkOTZjOTBkIiwiaXNzIjoiaHR0cHM6Ly9sYWJzeXMuZnJjLnV0bi5lZHUuYXIvYWltL3JlYWxtcy9iYWNrZW5kLXRwcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1YTk0N2Q5NC03OTg0LTRkZWEtODE5OS1mNGZjZjA5M2M2ZTMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjbGllbnRlLXRwaSIsInNlc3Npb25fc3RhdGUiOiJiOGJjNzQ0Yy1mMGM5LTQwNzEtOGY5ZC1hZjJlMDlkYmMxZDIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYmFja2VuZC10cHMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQ0xJRU5URSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoidHBpLXNjb3BlIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiJiOGJjNzQ0Yy1mMGM5LTQwNzEtOGY5ZC1hZjJlMDlkYmMxZDIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IkV4ZXF1aWVsIFNpbHZlc3RyZSIsInByZWZlcnJlZF91c2VybmFtZSI6IjgxODExQHNpc3RlbWFzLmZyYy51dG4uZWR1LmFyIiwiZ2l2ZW5fbmFtZSI6IkV4ZXF1aWVsIiwiZmFtaWx5X25hbWUiOiJTaWx2ZXN0cmUiLCJlbWFpbCI6IjgxODExQHNpc3RlbWFzLmZyYy51dG4uZWR1LmFyIiwiYXV0aG9yaXRpZXMiOlsiZGVmYXVsdC1yb2xlcy1iYWNrZW5kLXRwcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJDTElFTlRFIl19.UXyxdA-nFda9-q5pV1AGKcyhMDFE2b6aVx0qTLD7jkyU32y7z_pdUr8Bv6g1qj6GbGSKYsAJKUPa2yEzaikB499xNfzyT96mfadFX7sw31Jxr2k16ZtjQ5m_LLNXuTD4dOqfd7NNPXgJIN2q4gM7pwQRlfcdVldw726q-7ooR3XOIG2FeaJ4zFbzaQ-LuImKw7ZswiwRggIAE0EUIfiUWCaKGzwJkCHODUmK7m7_sUkMEIo64NdyXIF4MalmD214rU91ZwB78-E6jlBYRUR2DefX5czELWwUWl4iD4c9ikjBvf6sJLZtcmDJ4hU7ey5Wg7CZm7SAhAoAp4Z8pmxB7w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idCliente\": 1,\r\n    \"estacionRetiroObj\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/api/alquiler",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"alquiler"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "finAlquiler",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVcExod3d4cWk2QnRYSWpaMjNZeEtjUmp6U1MwTC1pNGRjWVh6cWl6MVhrIn0.eyJleHAiOjE2OTk4OTQ3MjUsImlhdCI6MTY5OTg5NDQyNSwianRpIjoiMTdmY2RiMjgtM2I3ZS00ZmM0LThhYmMtZjBlMGY1OGZhNzgxIiwiaXNzIjoiaHR0cHM6Ly9sYWJzeXMuZnJjLnV0bi5lZHUuYXIvYWltL3JlYWxtcy9iYWNrZW5kLXRwcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1YTk0N2Q5NC03OTg0LTRkZWEtODE5OS1mNGZjZjA5M2M2ZTMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjbGllbnRlLXRwaSIsInNlc3Npb25fc3RhdGUiOiJiNDY1MjhjMS04OTU1LTRiMmItOWQ4My1iMDQ4ZDM4ZWIyY2YiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYmFja2VuZC10cHMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQ0xJRU5URSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoidHBpLXNjb3BlIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiJiNDY1MjhjMS04OTU1LTRiMmItOWQ4My1iMDQ4ZDM4ZWIyY2YiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IkV4ZXF1aWVsIFNpbHZlc3RyZSIsInByZWZlcnJlZF91c2VybmFtZSI6IjgxODExQHNpc3RlbWFzLmZyYy51dG4uZWR1LmFyIiwiZ2l2ZW5fbmFtZSI6IkV4ZXF1aWVsIiwiZmFtaWx5X25hbWUiOiJTaWx2ZXN0cmUiLCJlbWFpbCI6IjgxODExQHNpc3RlbWFzLmZyYy51dG4uZWR1LmFyIiwiYXV0aG9yaXRpZXMiOlsiZGVmYXVsdC1yb2xlcy1iYWNrZW5kLXRwcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJDTElFTlRFIl19.fRI0GffymyBGq3HHJwCEZDEJ_1YMF19C6AHghuBFVTHyDj3TL_Xnba3a-8_okvbmbNOwPyWUtUjCfKeiE-6a1hnyUJxqif--IU01zy4mqRFXXnWq7Q1S4xfvbtFGJYiqwA6zFUlaUkv1Xr-YsmQQdawmum9a7B11AxLShbuvp7XUJjaNGpPptMx30VelTtKf8CccCaD09HaiMyJrQn6ElYhBW8hCtZ4V3nyxfmuv3ZZivRqGpdL1wwmVygfTf9k4rnKnU-7BB8rAlEDFfCMG44NvZoPt3IcdIWOYj43080-OBgKZZHfMOlY3luJBSfd7W9pufyx0hcEWFnP6c98ILA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"estacionDevolucion\": 1,\r\n    \"monedaElegida\": \"EUR\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/api/alquiler/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"alquiler",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "buscarPorEstaciones",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVcExod3d4cWk2QnRYSWpaMjNZeEtjUmp6U1MwTC1pNGRjWVh6cWl6MVhrIn0.eyJleHAiOjE2OTk5MTQ2NzQsImlhdCI6MTY5OTkxNDM3NCwianRpIjoiOGNlMmY4YmEtYzAxYi00ZTg4LWJhZjMtNWJkYmI0YTU3NmY2IiwiaXNzIjoiaHR0cHM6Ly9sYWJzeXMuZnJjLnV0bi5lZHUuYXIvYWltL3JlYWxtcy9iYWNrZW5kLXRwcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1MzcyZWM0OS1iMjk3LTRmZmMtYjMxOS0wY2M0M2VjN2NjMGEiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjbGllbnRlLXRwaSIsInNlc3Npb25fc3RhdGUiOiIwMWUyYzliYy0wMTA2LTRhN2ItOGJkMC1lNDdlODhlMzNiZWEiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIkFETUlOSVNUUkFET1IiLCJkZWZhdWx0LXJvbGVzLWJhY2tlbmQtdHBzIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoidHBpLXNjb3BlIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiIwMWUyYzliYy0wMTA2LTRhN2ItOGJkMC1lNDdlODhlMzNiZWEiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZ3J1dHBpLTY2IiwiZ2l2ZW5fbmFtZSI6IiIsImZhbWlseV9uYW1lIjoiIiwiYXV0aG9yaXRpZXMiOlsiQURNSU5JU1RSQURPUiIsImRlZmF1bHQtcm9sZXMtYmFja2VuZC10cHMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19.j8BJJnYS7wXKXTo1o8xY6JzLbDqLrfzq-eHaJMo0xYV6-Z8yAGIX_vmAet-ZwZ8wRrE__EnyvoLMocec8-o6HFChN-lvSw4yKZ8Blk4h8pIBtMO6IS0Z3_QEszN2U3cZnpEZVDT7nNtCHxEfYnUyiJyPvUlM1r5m3nBJ2QJ7tQQkEOVlY7nWKGoDmOwwpkgOg6u9IwZrzJ9_EQMOk_k2kT2IwuTPUsDyusEYVI3wMAl_0AxsnX9VnlZkYD9EvoB5MvoQLBBbhAnwGQQAYbAPpkFzLrBQrvnfiA5QOFAUTWQ5PMjZNhoZfR_Y9HSJg6tgDAzuUeWWSm22Z_KxsHCUKA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/api/alquiler/buscar?estacionRetiroId=2&estacionDevId=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"alquiler",
+										"buscar"
+									],
+									"query": [
+										{
+											"key": "estacionRetiroId",
+											"value": "2"
+										},
+										{
+											"key": "estacionDevId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Estaciones",
+					"item": [
+						{
+							"name": "entreEstaciones",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "estacionMasCercana",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVcExod3d4cWk2QnRYSWpaMjNZeEtjUmp6U1MwTC1pNGRjWVh6cWl6MVhrIn0.eyJleHAiOjE2OTk5MTQ5OTEsImlhdCI6MTY5OTkxNDY5MSwianRpIjoiNDFiODczY2MtOWUyMS00MmI1LTlkMDAtMjBmNzgzMjNjZDM4IiwiaXNzIjoiaHR0cHM6Ly9sYWJzeXMuZnJjLnV0bi5lZHUuYXIvYWltL3JlYWxtcy9iYWNrZW5kLXRwcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1YTk0N2Q5NC03OTg0LTRkZWEtODE5OS1mNGZjZjA5M2M2ZTMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjbGllbnRlLXRwaSIsInNlc3Npb25fc3RhdGUiOiI2MGUzOTFlNy02MDc0LTRjOTAtYTg4MS00ODY4MGRjNDE0MGMiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYmFja2VuZC10cHMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQ0xJRU5URSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoidHBpLXNjb3BlIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiI2MGUzOTFlNy02MDc0LTRjOTAtYTg4MS00ODY4MGRjNDE0MGMiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IkV4ZXF1aWVsIFNpbHZlc3RyZSIsInByZWZlcnJlZF91c2VybmFtZSI6IjgxODExQHNpc3RlbWFzLmZyYy51dG4uZWR1LmFyIiwiZ2l2ZW5fbmFtZSI6IkV4ZXF1aWVsIiwiZmFtaWx5X25hbWUiOiJTaWx2ZXN0cmUiLCJlbWFpbCI6IjgxODExQHNpc3RlbWFzLmZyYy51dG4uZWR1LmFyIiwiYXV0aG9yaXRpZXMiOlsiZGVmYXVsdC1yb2xlcy1iYWNrZW5kLXRwcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJDTElFTlRFIl19.HRyggAvi2gKsZT2pqnY_6FvM_1Y8jWdskjzd7ft0s3kuigg_j_tYy5OWk3RuGq4HIciyUBkBnVmxDuhG94I_g0OTZCF_qPyNYmJQMj43xdgasTVQSmgieaStDQNrGzCsxN_9OiU7HwDwXSNAPlFQZJtVv0jypAD3e6xOWlIRnE1jQ3nxiDNm4V9tK7mSoETA8T89T20C6u27hI1Qgstufu74_CNxTgRHl09UxrzofAniljcvX-9CH0Fbmw3TetLZYR_Agzcw3eaK727ngMBmPzt6QRAPNw_9Q4vFRQLwu-4HkKYxJvLD4yVN2Jzifq4k6bjKkFHyg-dqOa1Xy7aqMQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/api/estacion/mas-cercana?latitud=-31.442961123175&longitud=-64.1940911211195",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"estacion",
+										"mas-cercana"
+									],
+									"query": [
+										{
+											"key": "latitud",
+											"value": "-31.442961123175"
+										},
+										{
+											"key": "longitud",
+											"value": "-64.1940911211195"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "obtenerTodasLasEstaciones",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVcExod3d4cWk2QnRYSWpaMjNZeEtjUmp6U1MwTC1pNGRjWVh6cWl6MVhrIn0.eyJleHAiOjE2OTk5MTQ5OTEsImlhdCI6MTY5OTkxNDY5MSwianRpIjoiNDFiODczY2MtOWUyMS00MmI1LTlkMDAtMjBmNzgzMjNjZDM4IiwiaXNzIjoiaHR0cHM6Ly9sYWJzeXMuZnJjLnV0bi5lZHUuYXIvYWltL3JlYWxtcy9iYWNrZW5kLXRwcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1YTk0N2Q5NC03OTg0LTRkZWEtODE5OS1mNGZjZjA5M2M2ZTMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjbGllbnRlLXRwaSIsInNlc3Npb25fc3RhdGUiOiI2MGUzOTFlNy02MDc0LTRjOTAtYTg4MS00ODY4MGRjNDE0MGMiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYmFja2VuZC10cHMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQ0xJRU5URSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoidHBpLXNjb3BlIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiI2MGUzOTFlNy02MDc0LTRjOTAtYTg4MS00ODY4MGRjNDE0MGMiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IkV4ZXF1aWVsIFNpbHZlc3RyZSIsInByZWZlcnJlZF91c2VybmFtZSI6IjgxODExQHNpc3RlbWFzLmZyYy51dG4uZWR1LmFyIiwiZ2l2ZW5fbmFtZSI6IkV4ZXF1aWVsIiwiZmFtaWx5X25hbWUiOiJTaWx2ZXN0cmUiLCJlbWFpbCI6IjgxODExQHNpc3RlbWFzLmZyYy51dG4uZWR1LmFyIiwiYXV0aG9yaXRpZXMiOlsiZGVmYXVsdC1yb2xlcy1iYWNrZW5kLXRwcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJDTElFTlRFIl19.HRyggAvi2gKsZT2pqnY_6FvM_1Y8jWdskjzd7ft0s3kuigg_j_tYy5OWk3RuGq4HIciyUBkBnVmxDuhG94I_g0OTZCF_qPyNYmJQMj43xdgasTVQSmgieaStDQNrGzCsxN_9OiU7HwDwXSNAPlFQZJtVv0jypAD3e6xOWlIRnE1jQ3nxiDNm4V9tK7mSoETA8T89T20C6u27hI1Qgstufu74_CNxTgRHl09UxrzofAniljcvX-9CH0Fbmw3TetLZYR_Agzcw3eaK727ngMBmPzt6QRAPNw_9Q4vFRQLwu-4HkKYxJvLD4yVN2Jzifq4k6bjKkFHyg-dqOa1Xy7aqMQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/api/estacion",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"estacion"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "tokenCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "cliente-tpi",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "ZmiMMce6zh4xKHde1FFKbfkiThDyYpyn",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "81811@sistemas.frc.utn.edu.ar",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "81811-2023",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "tpi-scope",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://labsys.frc.utn.edu.ar/aim/realms/backend-tps/protocol/openid-connect/token",
+							"protocol": "https",
+							"host": [
+								"labsys",
+								"frc",
+								"utn",
+								"edu",
+								"ar"
+							],
+							"path": [
+								"aim",
+								"realms",
+								"backend-tps",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tokenAdministrador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "cliente-tpi",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "ZmiMMce6zh4xKHde1FFKbfkiThDyYpyn",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "grutpi-66",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "grutpi-66-2023#",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "tpi-scope",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://labsys.frc.utn.edu.ar/aim/realms/backend-tps/protocol/openid-connect/token",
+							"protocol": "https",
+							"host": [
+								"labsys",
+								"frc",
+								"utn",
+								"edu",
+								"ar"
+							],
+							"path": [
+								"aim",
+								"realms",
+								"backend-tps",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVcExod3d4cWk2QnRYSWpaMjNZeEtjUmp6U1MwTC1pNGRjWVh6cWl6MVhrIn0.eyJleHAiOjE3MDAwMDczMjQsImlhdCI6MTcwMDAwNzAyNCwianRpIjoiNzVlNTA3NGMtZDM5MC00NDIxLWEzMTEtODYxZmUyYmNlYjE4IiwiaXNzIjoiaHR0cHM6Ly9sYWJzeXMuZnJjLnV0bi5lZHUuYXIvYWltL3JlYWxtcy9iYWNrZW5kLXRwcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1YTk0N2Q5NC03OTg0LTRkZWEtODE5OS1mNGZjZjA5M2M2ZTMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjbGllbnRlLXRwaSIsInNlc3Npb25fc3RhdGUiOiJkYzgwYzA2My03MjdiLTRjYjEtYmQ1NS1lZWJmYTljNDdjZTAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYmFja2VuZC10cHMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQ0xJRU5URSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoidHBpLXNjb3BlIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiJkYzgwYzA2My03MjdiLTRjYjEtYmQ1NS1lZWJmYTljNDdjZTAiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IkV4ZXF1aWVsIFNpbHZlc3RyZSIsInByZWZlcnJlZF91c2VybmFtZSI6IjgxODExQHNpc3RlbWFzLmZyYy51dG4uZWR1LmFyIiwiZ2l2ZW5fbmFtZSI6IkV4ZXF1aWVsIiwiZmFtaWx5X25hbWUiOiJTaWx2ZXN0cmUiLCJlbWFpbCI6IjgxODExQHNpc3RlbWFzLmZyYy51dG4uZWR1LmFyIiwiYXV0aG9yaXRpZXMiOlsiZGVmYXVsdC1yb2xlcy1iYWNrZW5kLXRwcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJDTElFTlRFIl19.a_xu4tTK091dTTqAMgDMaXCd5Nxzburw2HajaEgi6d1WK8Uu9VTHTKBmyVjsjh68q5ZfEt_MMju45zrAQORkC8RK3GHptZKoAJwv8B_zWD4CnSUW6jYq_UzpbOrft8-wg2Y1frP1duS4DwziY6RkLb1b93yeLqgkRCYrrA2ofgjQ2rJWd8-N2ulhDjntJJKHcdIC0t3kpHDo6ZOBkwyBbg8afwQlL6-mLHpqHcoqxtq04jm-wVZeYUtjMYsz7v-FXsI6C0SdRrDsVehMCkm5OjjcWcBdhL-d4PREkRRDtIr-uW3Dy4j5Yun9aNIblWVrjPgC_ACHJTETc2-fnwhkKw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "tokencliente",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVcExod3d4cWk2QnRYSWpaMjNZeEtjUmp6U1MwTC1pNGRjWVh6cWl6MVhrIn0.eyJleHAiOjE3MDAwMDczMjQsImlhdCI6MTcwMDAwNzAyNCwianRpIjoiNzVlNTA3NGMtZDM5MC00NDIxLWEzMTEtODYxZmUyYmNlYjE4IiwiaXNzIjoiaHR0cHM6Ly9sYWJzeXMuZnJjLnV0bi5lZHUuYXIvYWltL3JlYWxtcy9iYWNrZW5kLXRwcyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1YTk0N2Q5NC03OTg0LTRkZWEtODE5OS1mNGZjZjA5M2M2ZTMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJjbGllbnRlLXRwaSIsInNlc3Npb25fc3RhdGUiOiJkYzgwYzA2My03MjdiLTRjYjEtYmQ1NS1lZWJmYTljNDdjZTAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYmFja2VuZC10cHMiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiQ0xJRU5URSJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoidHBpLXNjb3BlIGVtYWlsIHByb2ZpbGUiLCJzaWQiOiJkYzgwYzA2My03MjdiLTRjYjEtYmQ1NS1lZWJmYTljNDdjZTAiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IkV4ZXF1aWVsIFNpbHZlc3RyZSIsInByZWZlcnJlZF91c2VybmFtZSI6IjgxODExQHNpc3RlbWFzLmZyYy51dG4uZWR1LmFyIiwiZ2l2ZW5fbmFtZSI6IkV4ZXF1aWVsIiwiZmFtaWx5X25hbWUiOiJTaWx2ZXN0cmUiLCJlbWFpbCI6IjgxODExQHNpc3RlbWFzLmZyYy51dG4uZWR1LmFyIiwiYXV0aG9yaXRpZXMiOlsiZGVmYXVsdC1yb2xlcy1iYWNrZW5kLXRwcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJDTElFTlRFIl19.a_xu4tTK091dTTqAMgDMaXCd5Nxzburw2HajaEgi6d1WK8Uu9VTHTKBmyVjsjh68q5ZfEt_MMju45zrAQORkC8RK3GHptZKoAJwv8B_zWD4CnSUW6jYq_UzpbOrft8-wg2Y1frP1duS4DwziY6RkLb1b93yeLqgkRCYrrA2ofgjQ2rJWd8-N2ulhDjntJJKHcdIC0t3kpHDo6ZOBkwyBbg8afwQlL6-mLHpqHcoqxtq04jm-wVZeYUtjMYsz7v-FXsI6C0SdRrDsVehMCkm5OjjcWcBdhL-d4PREkRRDtIr-uW3Dy4j5Yun9aNIblWVrjPgC_ACHJTETc2-fnwhkKw",
+			"type": "string"
+		}
+	]
+}
